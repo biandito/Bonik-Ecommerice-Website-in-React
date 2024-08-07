@@ -22,19 +22,19 @@ const Navbar = () => {
                 <Link to='/'>home</Link>
               </li>
               <li>
-                <Link to='/pages'>pages</Link>
+                <Link to='/pages'>páginas</Link>
               </li>
               <li>
-                <Link to='/user'>user account</Link>
+                <Link to='/user'>usuário</Link>
               </li>
               <li>
-                <Link to='/vendor'>vendor account</Link>
+                <Link to='/vendor'>vendedor</Link>
               </li>
               <li>
-                <Link to='/track'>track my order</Link>
+                <Link to='/track'>rastreio</Link>
               </li>
               <li>
-                <Link to='/contact'>contact</Link>
+                <Link to='/contact'>contato</Link>
               </li>
             </ul>
 
