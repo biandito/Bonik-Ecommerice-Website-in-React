@@ -1,35 +1,37 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
+import { Container, Paper, Typography, TextField, Button } from '@mui/material';
+import './App.css';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const history = useHistory();
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    history.push('/profile');
-  };
-
   return (
-    <StyledContainer>
-      <StyledTypography variant="h4">Login</StyledTypography>
-      <StyledForm onSubmit={handleLogin}>
-        <StyledTextField
-          label="Email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <StyledTextField
-          label="Password"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <StyledButton type="submit">Login</StyledButton>
-      </StyledForm>
-    </StyledContainer>
+    <Container className="login-container">
+      <Paper className="login-paper">
+        <Typography variant="h4" className="login-title">
+          Login
+        </Typography>
+        <form className="login-form">
+          <TextField
+            label="Email"
+            type="email"
+            name="email"
+            fullWidth
+            required
+            className="login-input"
+          />
+          <TextField
+            label="Senha"
+            type="password"
+            name="password"
+            fullWidth
+            required
+            className="login-input"
+          />
+          <Button type="submit" className="btn-primary">
+            Entrar
+          </Button>
+        </form>
+      </Paper>
+    </Container>
   );
 };
 
