@@ -1,36 +1,45 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
+import { Container, Paper, Typography, TextField, Button } from '@mui/material';
+import './App.css';
 
-const Registrar = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const history = useHistory();
-
-  const handleRegisrar = (e) => {
-    e.preventDefault();
-    history.push('/login');
-  };
-
+const Register = () => {
   return (
-    <StyledContainer>
-      <StyledTypography variant="h4">Registrar</StyledTypography>
-      <StyledForm onSubmit={handleRegisrar}>
-        <StyledTextField
-          label="Email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <StyledTextField
-          label="Senha"
-          type="senha"
-          value={senha}
-          onChange={(e) => setSenha(e.target.value)}
-        />
-        <StyledButton type="submit">Registrar</StyledButton>
-      </StyledForm>
-    </StyledContainer>
+    <Container className="register-container">
+      <Paper className="register-paper">
+        <Typography variant="h4" className="register-title">
+          Registro
+        </Typography>
+        <form className="register-form">
+          <TextField
+            label="Nome"
+            name="name"
+            fullWidth
+            required
+            className="register-input"
+          />
+          <TextField
+            label="Email"
+            type="email"
+            name="email"
+            fullWidth
+            required
+            className="register-input"
+          />
+          <TextField
+            label="Senha"
+            type="password"
+            name="password"
+            fullWidth
+            required
+            className="register-input"
+          />
+          <Button type="submit" className="btn-primary">
+            Registrar
+          </Button>
+        </form>
+      </Paper>
+    </Container>
   );
 };
 
-export default Registrar;
+export default Register;
